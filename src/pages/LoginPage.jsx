@@ -1,9 +1,10 @@
-const { useState } = require("react");
+import { useState } from 'react'
 
 function LoginPage() {
     const [username, setUsername] = useState('');
 
-    return <>
+    return (
+    <>
         <input className="signup-id-input"
             type="text"
             autoComplete="username"
@@ -13,4 +14,7 @@ function LoginPage() {
             required
           />
     </>
+    )
 }
+
+export default LoginPage;

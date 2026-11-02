@@ -2,6 +2,7 @@ import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
+import LoginPage from './pages/LoginPage.jsx'
 import './App.css'
 
 function App() {
@@ -111,6 +112,7 @@ function App() {
             </li>
           </ul>
         </div>
+        <LoginPage />
       </section>
 
       <div className="ticks"></div>
