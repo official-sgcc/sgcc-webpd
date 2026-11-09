@@ -1,4 +1,4 @@
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./MemberPage.css";
 
@@ -129,7 +129,7 @@ const getCalendarDays = (date: Date): CalendarDay[] => {
 
 function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
-
+  const navigate = useNavigate();
   // 프로젝트 선택 상태
   const [selectedProject, setSelectedProject] =
     useState<Project | null>(null);
@@ -162,14 +162,24 @@ function App() {
           <h1>SGCC</h1>
           <span>회원 페이지</span>
         </div>
+        <div className="header-right">
+          <button
+            type="button"
+            className="page-switch-button"
+            onClick={() => navigate("/admin")}
+           
+>
+          ⇄ 관리자 페이지
+          </button>
 
-        <button
-          type="button"
-          className="logout-button"
-          onClick={() => alert("로그아웃 기능을 연결해주세요.")}
-        >
-          ⇥ logout
-        </button>
+          <button
+            type="button"
+            className="logout-button"
+            onClick={() => navigate("/login")}
+          >
+            ⇥ logout
+         </button>
+        </div>
       </header>
 
       {/* 메인 콘텐츠 */}
