@@ -7,6 +7,7 @@ import viteLogo from './assets/vite.svg'
 import LoginPage from './pages/LoginPage.jsx'
 import AdminPage from './pages/AdminPage/AdminPage.jsx'
 import MemberPage from './pages/MemberPage.tsx'
+import SignupPage from './pages/SignupPage/Signup'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,10 @@ function App() {
 
         {/* 로그인 페이지 */}
         <Route path="/login" element={<LoginPage />} />
+
+        {/*회원가입 페이지*/}
+        <Route path='/signup' element={<SignupPage />} />
+
       </Routes>
     </BrowserRouter>
   )
