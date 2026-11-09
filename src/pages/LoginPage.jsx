@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
 import './LoginPage.css'
 
 function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
     return (
     <>
@@ -34,8 +36,13 @@ function LoginPage() {
         <button className="login-button" type="submit">
             로그인
           </button>
-        <button className="signup-button" type="submit">
-            아직 회원이 아니신가요?
+        <button 
+            className="signup-button" 
+            type="button"
+            onClick={() => navigate('/signup')}
+
+            >
+                아직 회원이 아니신가요?
           </button>
           </section>
         </main>

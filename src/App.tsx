@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import LoginPage from './pages/LoginPage.jsx'
 import AdminPage from './pages/AdminPage/AdminPage.jsx'
 import MemberPage from './pages/MemberPage.tsx'
+import Signup from './pages/SignupPage/Signup.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +20,9 @@ function App() {
 
         {/* 로그인 페이지 */}
         <Route path="/login" element={<LoginPage />} />
+        
+        {/* 회원가입 페이지 */}
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   )
