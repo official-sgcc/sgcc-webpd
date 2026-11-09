@@ -1,0 +1,457 @@
+/* =========================
+   기본 설정
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #1c1b2e;
+  color: #fff;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+/* =========================
+   전체 레이아웃
+========================= */
+.app-container {
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+  background: #1c1b2e;
+}
+
+.header {
+  width: 100%;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 22px;
+  background: #1c1b2e;
+  border-bottom: 2px solid #464555;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-area h1 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.logo-area span {
+  font-size: 18px;
+}
+
+.logout-button {
+  color: #fff;
+  background: transparent;
+  font-size: 20px;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 52px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* =========================
+   왼쪽 회원정보 영역
+========================= */
+.profile-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 300px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 20px 50px;
+  background: #1c1b2e;
+}
+
+.profile-top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 105px;
+}
+
+.profile-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #d8d8d8;
+}
+
+.edit-button {
+  position: absolute;
+  top: -15px;
+  right: -5px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: #fff;
+  background: #c90000;
+  font-size: 16px;
+}
+
+.edit-button:hover {
+  background: #e00000;
+}
+
+.member-info {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  align-items: center;
+  min-height: 27px;
+  font-size: 16px;
+}
+
+.info-row > span,
+.info-row p {
+  color: #eee;
+}
+
+.info-row p {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.email-row {
+  margin-bottom: 17px;
+}
+
+.group-row {
+  align-items: start;
+  margin-top: 5px;
+}
+
+.group-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 2px;
+}
+
+.group-tag {
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 2px;
+  color: #333;
+  background: #ffc16b;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* =========================
+   하단 SNS 영역
+========================= */
+.social-area {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  height: 60px;
+  padding-left: 30px;
+  border-top: 2px solid #484757;
+}
+
+.social-area a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.social-area a:hover {
+  color: #ffc16b;
+}
+
+/* =========================
+   오른쪽 콘텐츠 영역 및 스크롤
+========================= */
+.content-section {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 20px 35px 40px;
+  background: #fff;
+}
+
+.content-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-section::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.content-section::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+.content-section::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* =========================
+   달력 영역
+========================= */
+.calendar-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.calendar-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 27px;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.calendar-heading button {
+  color: #333;
+  background: transparent;
+  font-size: 14px;
+}
+
+.calendar-heading button:hover {
+  color: #c00000;
+}
+
+.calendar-heading .today-button {
+  padding: 3px 7px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.weekday-bar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  width: 100%;
+  height: 28px;
+  margin-bottom: 7px;
+  border-radius: 30px;
+  color: #222;
+  background: #dedede;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weekday-bar .sunday {
+  color: #e50000;
+}
+
+.weekday-bar .saturday {
+  color: blue;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
+  height: auto;
+  min-height: 278px;
+  aspect-ratio: 1.5 / 1;
+  padding: 7px;
+  overflow: hidden;
+  border: 3px solid #b61919;
+  border-radius: 17px;
+  outline: 3px solid #08b9ff;
+  outline-offset: -10px;
+  background: #b61919;
+}
+
+.calendar-day {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 5px;
+  border: 1px solid #080808;
+  color: #080808;
+  background: #b51a1a;
+  font-size: 16px;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.calendar-day:hover {
+  background: #d23a3a;
+}
+
+.calendar-day.other-month {
+  color: #4a2eda;
+}
+
+.calendar-day.selected-day {
+  color: #fff;
+  background: #e04444;
+  font-weight: bold;
+}
+
+/* =========================
+   프로젝트 카드 영역
+========================= */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+  width: 100%;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 0.7 / 1;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #b61919;
+}
+
+.project-title {
+  display: flex;
+  flex: 0 0 45%;
+  align-items: flex-end;
+  height: auto;
+  padding: 0 7px 9px;
+  border-bottom: 2px solid #777;
+  color: #fff;
+  background: #1c1b2e;
+  font-size: 23px;
+}
+
+.project-detail {
+  flex: 1;
+  padding: 9px 7px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* =========================
+   태블릿 반응형
+========================= */
+@media (max-width: 900px) {
+  .profile-section {
+    width: 35%;
+    min-width: 250px;
+    padding: 20px 25px;
+  }
+
+  .content-section {
+    padding: 18px 20px 35px;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   모바일 반응형
+========================= */
+@media (max-width: 600px) {
+  .main-container {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .profile-section {
+    width: 100%;
+    height: 430px;
+    min-width: 0;
+    min-height: 430px;
+    flex-shrink: 0;
+    padding: 25px;
+  }
+
+  .content-section {
+    width: 100%;
+    height: auto;
+    flex: 1;
+    min-height: 0;
+    overflow-y: scroll;
+    padding: 20px;
+  }
+
+  .calendar-grid {
+    min-height: 230px;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   작은 모바일
+========================= */
+@media (max-width: 380px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .social-area {
+    gap: 15px;
+    padding-left: 20px;
+  }
+
+  .social-area a {
+    font-size: 12px;
+  }
+}
