@@ -1,0 +1,60 @@
+.group-list{
+    width: 340px;
+    height: 900px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: #ffffff;
+}
+
+.group-card {
+  border-radius: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.group-card-top {
+  background-color: #1b1d33;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 16px;
+}
+
+.group-name {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.group-card-bottom {
+  background-color: #b31b1b;
+  padding: 16px 28px 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.member-chip {
+  background-color: #2b2f7a;
+  color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 17px;
+  border-radius: 4px;
+}
+
+.group-list::-webkit-scrollbar{
+    width: 12px;
+}
+.group-list::-webkit-scrollbar-track{
+    background-color: #dddddd;
+    border-radius: 6px;
+}
+.group-list::-webkit-scrollbar-thumb{
+    background-color: #888888;
+    border-radius:6px
+}
