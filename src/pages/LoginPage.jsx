@@ -34,6 +34,9 @@ function LoginPage() {
         <button className="login-button" type="submit">
             로그인
           </button>
+        <button className="signup-button" type="submit">
+            아직 회원이 아니신가요?
+          </button>
           </section>
         </main>
     </>
