@@ -336,7 +336,7 @@ function App() {
                 type="button"
                 className="project-card"
                 key={index}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => navigate("/project")}
               >
                 <div className="project-title">
                   {project.title}
