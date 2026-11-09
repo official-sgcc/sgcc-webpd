@@ -359,8 +359,22 @@ button {
   height: auto;
   aspect-ratio: 0.7 / 1;
   overflow: hidden;
+  text-align: left;
   border-radius: 18px;
   background: #b61919;
+    /* 카드 크기 변화 애니메이션 */
+  transition: transform 0.2s ease;
+  transform: scale(1);
+}
+/* 프로젝트 카드에 마우스를 올렸을 때 */
+.project-card:hover {
+  transform: scale(1.03);
+  filter: none;
+}
+/* 키보드로 선택했을 때 */
+.project-card:focus-visible {
+  outline: 3px solid #08b9ff;
+  outline-offset: 3px;
 }
 
 .project-title {
