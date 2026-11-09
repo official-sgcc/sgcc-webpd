@@ -1,0 +1,171 @@
+
+.signup-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+
+.signup-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  border-radius: 20px;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 48px; 
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+.signup-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 14px;
+  padding-left: 6px;
+}
+
+.field input {
+  width: 100%;
+  height: 34px;
+  border: none;
+  border-radius: 17px;
+  background-color: #d9d9d9;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #000000;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.field input:focus {
+  box-shadow: 0 0 0 1.5px #555555;
+}
+
+.field input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.small-btn {
+  flex-shrink: 0;
+  height: 26px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b31b1b;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.msg {
+  margin: 0;
+  padding-left: 6px;
+  font-size: 12px;
+}
+
+.msg.ok {
+  color: #1e88e5;
+}
+
+.msg.error {
+  color: #e53935;
+}
+
+.consent-question {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  word-break: keep-all; 
+}
+
+.consent-options {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.consent-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+
+.consent-options input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 1.5px solid #b31b1b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.consent-options input[type="radio"]:checked {
+  background-color: #b31b1b;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+
+.submit-btn {
+  align-self: center;
+  width: 140px;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  background-color: #b31b1b;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: #d9a3a3;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .signup-card {
+    padding: 48px 32px;
+  }
+}
