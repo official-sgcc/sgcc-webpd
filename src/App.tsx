@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { useState } from 'react'
 import LoginPage from './pages/LoginPage.jsx'
 import AdminPage from './pages/AdminPage/AdminPage.jsx'
 import MemberPage from './pages/MemberPage.tsx'
@@ -10,8 +9,6 @@ import MemberInfoPage from './pages/MemberInfoChange.tsx'
 import FindpasswordPage from './pages/Findpassword.tsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
       <Routes>

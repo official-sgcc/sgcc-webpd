@@ -352,44 +352,6 @@ function MemberPage() {
     }));
   };
 
-  // 수정 시작
-  const handleEdit = () => {
-
-    if (!member) return;
-
-    setEditForm({
-      name: member.name,
-      student_id: member.student_id,
-      grade: member.grade,
-      phone: member.phone || "",
-      status: member.status,
-      role: member.role || "",
-      image: member.image || "",
-    });
-
-    setError("");
-    setIsEditing(true);
-  };
-
-  // 수정 취소
-  const handleCancel = () => {
-
-    if (!member) return;
-
-    setEditForm({
-      name: member.name,
-      student_id: member.student_id,
-      grade: member.grade,
-      phone: member.phone || "",
-      status: member.status,
-      role: member.role || "",
-      image: member.image || "",
-    });
-
-    setError("");
-    setIsEditing(false);
-  };
-
   // 수정 내용 저장
   const handleSave = async () => {
 
