@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./MemberPage.css";
+import "./MemberInfoChange.css";
 
 // =========================
 // 타입 정의
@@ -194,7 +194,8 @@ function App() {
             <button
               type="button"
               className="edit-button"
-              onClick={() => alert("회원정보 수정 기능")}
+              onClick={() => navigate("/infochange")}
+
             >
               수정하기
             </button>

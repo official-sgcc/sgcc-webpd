@@ -34,8 +34,13 @@ function LoginPage() {
                 required
             />
             </div>
-        <button className="login-button" type="submit">
-            로그인
+        <button 
+            className="login-button" 
+            type="button"                    
+            onClick={() => navigate('/main')}
+
+            >
+                로그인
           </button>
 
         <button
