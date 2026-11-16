@@ -4,8 +4,8 @@ import { useState } from 'react'
 import LoginPage from './pages/LoginPage.jsx'
 import AdminPage from './pages/AdminPage/AdminPage.jsx'
 import MemberPage from './pages/MemberPage.tsx'
+import SignupPage from './pages/SignupPage/Signup.jsx'
 import ProjectPage from './pages/ProjectPage/ProjectPage.jsx'
-import SignupPage from './pages/SignupPage/Signup'
 import MemberInfoPage from './pages/MemberInfoChange.tsx'
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
       <Routes>
         {/* 기본 접속 경로: 사용자 페이지 */}
         <Route path="/" element={<MemberPage />} />
+
+        <Route path="/project" element={<ProjectPage />} />
 
         {/* 관리자 페이지 */}
         <Route path="/admin" element={<AdminPage />} />

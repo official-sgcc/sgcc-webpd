@@ -58,3 +58,10 @@
     background-color: #888888;
     border-radius:6px
 }
+
+
+.group-status {
+  padding: 16px;
+  color: #888888;
+  text-align: center;
+}

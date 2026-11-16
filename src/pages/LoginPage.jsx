@@ -10,7 +10,7 @@ function LoginPage() {
 
     return (
     <>
-        <main className="screen">
+        <main className="login=page">
             <section className="login-card">
                 <h1 className="login-title">Login</h1>
         
