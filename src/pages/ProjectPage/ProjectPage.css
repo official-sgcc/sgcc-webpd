@@ -1,0 +1,273 @@
+
+/* =========================
+   기본 설정
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #1c1b2e;
+  color: #fff;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+/* =========================
+   전체 페이지
+========================= */
+
+.project-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* =========================
+   상단 헤더
+   MemberPage와 동일한 높이
+========================= */
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+  flex-shrink: 0;
+
+  padding: 0 22px;
+
+  background: #1c1b2e;
+  border-bottom: 2px solid #464555;
+}
+
+.project-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-header-title strong {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.project-header-title span {
+  font-size: 18px;
+}
+
+.project-logout-button {
+  color: #fff;
+  background: transparent;
+  font-size: 20px;
+  transition: none;
+}
+
+/* =========================
+   빨간색 메뉴 바
+========================= */
+
+.project-navigation {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 36px;
+  min-height: 36px;
+  flex-shrink: 0;
+
+  padding: 0 10px;
+  background: #b61919;
+}
+
+.project-back-button {
+  padding: 4px 0;
+  color: #fff;
+  background: transparent;
+  font-size: 16px;
+  transition: none;
+}
+
+/* =========================
+   메인 콘텐츠 영역
+========================= */
+
+.project-main {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+
+  padding: 15px;
+  overflow: hidden;
+
+  background: #fff;
+}
+
+/* =========================
+   프로젝트 콘텐츠 창
+========================= */
+
+.project-content-window {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  overflow: hidden;
+
+  border: 2px solid #1c1b2e;
+  border-radius: 0 0 13px 13px;
+
+  background: #fff;
+}
+
+/* 상단 남색 영역 */
+
+.project-content-header {
+  width: 100%;
+  height: 95px;
+  min-height: 95px;
+  flex-shrink: 0;
+
+  background: #1c1b2e;
+}
+
+/* 하단 흰색 영역 */
+
+.project-content-body {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+
+  overflow-y: auto;
+
+  color: #1c1b2e;
+  background: #fff;
+}
+
+/* =========================
+   하단 SNS 영역
+   MemberPage와 동일한 높이
+========================= */
+
+.project-footer {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  flex-shrink: 0;
+
+  padding-left: 30px;
+
+  background: #1c1b2e;
+  border-top: 2px solid #484757;
+}
+
+.project-social-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.project-social-links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.project-social-links a:hover {
+  color: #ffc16b;
+}
+
+/* =========================
+   태블릿 반응형
+========================= */
+
+@media (max-width: 900px) {
+  .project-main {
+    padding: 12px;
+  }
+
+  .project-content-header {
+    height: 95px;
+    min-height: 95px;
+  }
+}
+
+/* =========================
+   모바일 반응형
+========================= */
+
+@media (max-width: 600px) {
+  .project-header {
+    padding: 0 15px;
+  }
+
+  .project-header-title strong {
+    font-size: 21px;
+  }
+
+  .project-header-title span {
+    font-size: 15px;
+  }
+
+  .project-logout-button {
+    font-size: 15px;
+  }
+
+  .project-main {
+    padding: 10px;
+  }
+
+  .project-content-header {
+    height: 75px;
+    min-height: 75px;
+  }
+
+  .project-footer {
+    padding-left: 20px;
+  }
+
+  .project-social-links {
+    gap: 15px;
+  }
+
+  .project-social-links a {
+    font-size: 14px;
+  }
+}
