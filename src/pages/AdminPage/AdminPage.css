@@ -1,92 +1,763 @@
-.member-section {
-    width: 34%;
-    min-width: 380px;
-    height: calc(100vh - 76px);
-    padding: 22px;
-    background-color: #fff;
-    box-sizing: border-box;
+
+/* =====================================
+   1. 기본 설정
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #1c1b2e;
+  color: #fff;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+
+/* =====================================
+   2. 전체 관리자 페이지
+===================================== */
+
+.admin-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+  background: #1c1b2e;
+}
+
+
+/* =====================================
+   3. 상단 헤더
+   MemberPage와 동일한 디자인
+===================================== */
+
+.admin-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 52px;
+  flex-shrink: 0;
+  padding: 0 22px;
+  background: #1c1b2e;
+  border-bottom: 2px solid #464555;
+}
+
+.admin-page .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-page .logo-area h1 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.admin-page .logo-area span {
+  font-size: 18px;
+}
+
+.admin-page .header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-page .page-switch-button {
+  padding: 5px 8px;
+  color: #fff;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 18px;
+  transition: none;
+  cursor: pointer;
+}
+
+.admin-page .logout-button {
+  color: #fff;
+  background: transparent;
+  font-size: 20px;
+}
+
+.admin-page .page-switch-button:hover{
+  background: transparent;
+  transform: none;
+  filter: none;
+}
+
+
+/* =====================================
+   4. 메인 영역
+===================================== */
+
+.admin-main-container {
+  display: flex;
+
+  width: 100%;
+  height: calc(100vh - 52px);
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* =====================================
+   5. 왼쪽 관리자 프로필 영역
+   MemberPage 디자인 재사용
+===================================== */
+
+.admin-page .admin-profile-section {
+  position: relative;
+  flex: 0 0 35%;
+  width: 35%;
+  min-width: 0px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 20px 50px;
+  background: #1c1b2e;
+}
+
+
+/* 프로필 상단 */
+
+.admin-page .profile-top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 105px;
+}
+
+.admin-page .profile-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #d8d8d8;
+}
+
+.admin-page .edit-button {
+  position: absolute;
+  top: -15px;
+  right: -5px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: #fff;
+  background: #c90000;
+  font-size: 16px;
+}
+
+.admin-page .edit-button:hover {
+  background: #e00000;
+}
+
+
+/* 관리자 정보 */
+
+.admin-page .admin-member-info {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.admin-page .info-row {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  align-items: center;
+  min-height: 27px;
+  font-size: 16px;
+}
+
+.admin-page .info-row > span,
+.admin-page .info-row p {
+  color: #eee;
+}
+
+.admin-page .info-row p {
+  min-width: 0;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.admin-page .email-row {
+  margin-bottom: 17px;
+}
+
+.admin-page .group-row {
+  align-items: start;
+  margin-top: 5px;
+}
+
+.admin-page .group-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 2px;
+}
+
+.admin-page .group-tag {
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 2px;
+  color: #333;
+  background: #ffc16b;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* 왼쪽 하단 SNS */
+
+.admin-page .social-area {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  height: 60px;
+  padding-left: 30px;
+  border-top: 2px solid #484757;
+}
+
+.admin-page .social-area a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.admin-page .social-area a:hover {
+  color: #ffc16b;
+}
+
+
+/* =====================================
+   6. 가운데 회원 검색 영역
+===================================== */
+
+.admin-search-container {
+  flex: 0 0 35%;
+  width: 35%;
+  min-width: 0;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+
+
+/* 회원 검색 전체 */
+
+.admin-search-container .member-section {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  padding: 16px;
+
+  overflow: hidden;
+
+  background-color: #fff;
+}
+
+
+/* 검색창 */
+
+.admin-search-container .member-search {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 46px;
+  min-height: 46px;
+
+  padding: 0 12px;
+  margin-bottom: 12px;
+
+  border-radius: 25px;
+  background-color: #d9d9d9;
+}
+
+/* 검색 아이콘 */
+
+.admin-search-container .member-search::before {
+  content: "";
+
+  width: 13px;
+  height: 13px;
+
+  flex-shrink: 0;
+
+  border: 4px solid #111;
+  border-radius: 50%;
+
+  margin-right: 8px;
+}
+
+.admin-search-container .member-search::after {
+  content: "";
+
+  position: absolute;
+  left: 28px;
+  top: 27px;
+
+  width: 9px;
+  height: 4px;
+
+  background: #111;
+  border-radius: 3px;
+
+  transform: rotate(45deg);
+}
+
+.admin-search-container .member-search input {
+  width: 100%;
+  height: 35px;
+
+  border: 0;
+  outline: none;
+
+  background: none;
+  font-size: 16px;
+}
+
+
+/* 회원 필터 */
+
+.admin-search-container .member-filter {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 82px;
+
+  padding: 10px 12px;
+  margin-bottom: 12px;
+
+  border-radius: 25px;
+  background-color: #d9d9d9;
+}
+
+.admin-search-container .filter-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 50%;
+  min-width: 0;
+  height: 38px;
+}
+
+.admin-search-container .filter-item label {
+  flex-shrink: 0;
+  margin-right: 5px;
+
+  color: #222;
+  font-size: 13px;
+}
+
+.admin-search-container .filter-item select {
+  width: 100%;
+  min-width: 0;
+  height: 27px;
+
+  padding: 0 8px;
+
+  border: 0;
+  border-radius: 18px;
+
+  background-color: #fff;
+  color: #333;
+
+  font-size: 11px;
+}
+
+
+/* 회원 목록 */
+
+.admin-search-container .member-list {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 3px;
+}
+
+.admin-search-container .member-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-search-container .member-list::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.admin-search-container .member-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.admin-search-container .member-list::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+
+/* 회원 개별 항목 */
+
+.admin-search-container .member-item {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+  height: 47px;
+  min-height: 47px;
+
+  margin-bottom: 14px;
+
+  border-radius: 25px;
+
+  background-color: #b21919;
+  color: #fff;
+
+  font-size: 11px;
+}
+
+.admin-search-container .member-profile {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  margin: 0 12px 0 5px;
+
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.admin-search-container .member-item span {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.admin-search-container .no-member {
+  padding: 20px;
+  color: #555;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* =====================================
+   7. 오른쪽 프로젝트 영역
+===================================== */
+
+.admin-project-section {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  height: 100%;
+
+  padding: 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #fff;
+}
+
+.admin-project-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-project-section::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.admin-project-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.admin-project-section::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+
+/* 프로젝트 카드 목록 */
+
+.admin-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+}
+
+
+/* 개별 프로젝트 카드 */
+
+.admin-project-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 270px;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  background: #b61919;
+}
+
+
+/* 프로젝트 제목 */
+
+.admin-project-title {
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 45%;
+  min-height: 115px;
+
+  padding: 0 10px 10px;
+
+  border-bottom: 2px solid #777;
+
+  background: #1c1b2e;
+  color: #fff;
+}
+
+.admin-project-title h2 {
+  font-size: 20px;
+  font-weight: normal;
+  overflow-wrap: anywhere;
+}
+
+
+/* 프로젝트 참여 회원 영역 */
+
+.admin-project-members {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  gap: 9px 7px;
+
+  flex: 1;
+
+  padding: 10px;
+  background: #b61919;
+}
+
+
+/* 참여 회원 이름 태그 */
+
+.admin-member-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 22px;
+
+  padding: 3px 7px;
+
+  border-radius: 3px;
+
+  background: #253a91;
+  color: #fff;
+
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+/* =====================================
+   8. 태블릿 반응형
+===================================== */
+
+@media (max-width: 900px) {
+
+  .admin-main-container {
+    grid-template-columns: 35% 37% 28%;
+  }
+
+  .admin-page .admin-profile-section {
+    padding: 20px 25px;
+  }
+
+  .admin-search-container .member-section {
+    padding: 12px;
+  }
+
+  .admin-search-container .filter-item {
+    width: 100%;
+  }
+
+  .admin-project-section {
+    padding: 8px;
+  }
+
+  .admin-project-card {
+    min-height: 240px;
+  }
+
+  .admin-project-title h2 {
+    font-size: 17px;
+  }
+
+  .admin-member-tag {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+}
+
+
+/* =====================================
+   9. 모바일 반응형
+===================================== */
+
+@media (max-width: 600px) {
+
+  .admin-page .header {
+    padding: 0 12px;
+  }
+
+  .admin-page .logo-area {
+    gap: 5px;
+  }
+
+  .admin-page .logo-area h1 {
+    font-size: 20px;
+  }
+
+  .admin-page .logo-area span {
+    font-size: 13px;
+  }
+
+  .admin-page .header-right {
+    gap: 8px;
+  }
+
+  .admin-page .page-switch-button {
+    font-size: 12px;
+  }
+
+  .admin-page .logout-button {
+    font-size: 13px;
+  }
+
+  .admin-main-container {
     display: flex;
     flex-direction: column;
-}
 
-.member-search {
-    height: 46px;
-    background-color: #D9D9D9;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    margin-bottom: 12px;
-}
-
-.member-search span {
-    font-size: 25px;
-}
-
-.member-search input {
-    width: 100%;
-    height: 35px;
-    border: 0;
-    outline: none;
-    background: none;
-    font-size: 16px;
-}
-
-.member-filter {
-    background-color: #D9D9D9;
-    border-radius: 28px;
-    padding: 10px 14px;
-    margin-bottom: 16px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.filter-item {
-    width: 50%;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.filter-item label {
-    font-size: 16px;
-}
-
-.filter-item select {
-    width: 140px;
-    height: 30px;
-    border: 0;
-    border-radius: 18px;
-    padding: 0 10px;
-    background-color: #fff;
-}
-
-.member-list {
-    flex: 1;
+    height: calc(100vh - 52px);
     overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .admin-page .admin-profile-section {
+    width: 100%;
+    height: 380px;
+    min-height: 380px;
+    flex-shrink: 0;
+
+    padding: 20px 25px;
+  }
+
+  .admin-search-container {
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+    flex-shrink: 0;
+  }
+
+  .admin-project-section {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+
+    overflow: visible;
+  }
+
+  .admin-project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-project-card {
+    min-height: 240px;
+  }
+
+  .admin-project-title h2 {
+    font-size: 16px;
+  }
 }
 
-.member-item {
-    height: 47px;
-    border-radius: 25px;
-    background-color: #B21919;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    margin-bottom: 14px;
-    font-size: 14px;
-}
 
-.member-profile {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: #D9D9D9;
-    margin: 0 20px 0 5px;
-}
+/* =====================================
+   10. 작은 모바일
+===================================== */
 
-.member-item span {
-    margin-right: 20px;
-    white-space: nowrap;
+@media (max-width: 380px) {
+
+  .admin-project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page .social-area {
+    gap: 15px;
+    padding-left: 20px;
+  }
+
+  .admin-page .social-area a {
+    font-size: 12px;
+  }
+
+  .admin-search-container .filter-item {
+    width: 100%;
+  }
+
+  .admin-page .page-switch-button {
+    font-size: 11px;
+  }
 }

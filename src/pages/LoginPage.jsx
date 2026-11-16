@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
 import './LoginPage.css'
-import { useNavigate} from 'react-router-dom'
 
 function LoginPage() {
     const [username, setUsername] = useState('');
@@ -11,7 +10,7 @@ function LoginPage() {
 
     return (
     <>
-        <main className="screen">
+        <main className="login=page">
             <section className="login-card">
                 <h1 className="login-title">Login</h1>
         
