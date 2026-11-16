@@ -7,6 +7,7 @@ import MemberPage from './pages/MemberPage.tsx'
 import SignupPage from './pages/SignupPage/Signup.jsx'
 import ProjectPage from './pages/ProjectPage/ProjectPage.jsx'
 import MemberInfoPage from './pages/MemberInfoChange.tsx'
+import FindpasswordPage from './pages/Findpassword.tsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,8 +18,6 @@ function App() {
         {/* 기본 접속 경로: 사용자 페이지 */}
         <Route path="/" element={<MemberPage />} />
 
-        <Route path="/project" element={<ProjectPage />} />
-
         {/* 관리자 페이지 */}
         <Route path="/admin" element={<AdminPage />} />
 
@@ -27,6 +26,9 @@ function App() {
 
         {/* 로그인 페이지 */}
         <Route path="/login" element={<LoginPage />} />
+
+        {/* 비밀번호 찾기 페이지 */}
+        <Route path="/findpassword" element={<FindpasswordPage />} />
 
         {/*회원가입 페이지*/}
         <Route path='/signup' element={<SignupPage />} />

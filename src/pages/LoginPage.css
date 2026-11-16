@@ -57,13 +57,26 @@ body {
     display: block;
     width: 222px;
     height: 80px;
-    margin: 85px auto 0;
+    margin: 42px auto 0;
     border: 0;
     border-radius: 18px;
     background: #B21919;
     color: #fff;
     font-size: 22px;
     cursor: pointer;
+}
+
+.forgot-password-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 0;
+    color: #008CFF;
+    background: transparent;
+    font-size: 15px;
+}
+
+.forgot-password-button:hover {
+    text-decoration: underline;
 }
 
 .signup-button {

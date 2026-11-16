@@ -10,7 +10,7 @@ function LoginPage() {
 
     return (
     <>
-        <main className="login=page">
+        <main className="login-page">
             <section className="login-card">
                 <h1 className="login-title">Login</h1>
         
@@ -34,10 +34,17 @@ function LoginPage() {
                 required
             />
             </div>
+        <button
+          className="forgot-password-button"
+          type="button"
+          onClick={() => navigate('/findpassword')}
+        >
+          비밀번호를 잊으셨나요?
+        </button>
         <button 
             className="login-button" 
             type="button"                    
-            onClick={() => navigate('/main')}
+            onClick={() => navigate('/')}
 
             >
                 로그인
