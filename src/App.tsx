@@ -4,8 +4,12 @@ import { useState } from 'react'
 import LoginPage from './pages/LoginPage.jsx'
 import AdminPage from './pages/AdminPage/AdminPage.jsx'
 import MemberPage from './pages/MemberPage.tsx'
+<<<<<<< HEAD
 import SignupPage from './pages/SignupPage/Signup.jsx'
 import ProjectPage from './pages/ProjectPage/ProjectPage.jsx'
+=======
+import SignupPage from './pages/SignupPage/Signup'
+>>>>>>> 66858bad7716ca0de08cf0ffdc0e2694713bfc9f
 
 function App() {
   const [count, setCount] = useState(0)
