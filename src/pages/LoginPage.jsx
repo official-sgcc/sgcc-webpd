@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
 import './LoginPage.css'
-import { useNavigate} from 'react-router-dom'
 
 function LoginPage() {
     const [username, setUsername] = useState('');
