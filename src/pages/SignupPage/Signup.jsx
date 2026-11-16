@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Signup.css";
+import { useNavigate } from "react-router-dom";
 
 // ===== 입력값 검사 규칙 (팀에서 정한 규칙이 있으면 바꾸기) =====
 const STUDENT_ID_RULE = /^\d{8}$/; // 숫자 8자리
@@ -43,6 +44,7 @@ function ConsentQuestion({ name, question, value, onChange }) {
 }
 
 function SignupPage() {
+    const navigate = useNavigate();
   
   const [name, setName] = useState("");
   const [studentID, setStudentID] = useState("");
@@ -149,7 +151,8 @@ function SignupPage() {
     if (!canSubmit) return;
     
     console.log("회원가입 요청:", { name, studentID, email, username });
-    alert("회원가입 요청 완료 (테스트)");
+    alert("회원가입 요청 완료되었습니다. 로그인해 주세요");
+    navigate('/login');
   };
 
   return (
